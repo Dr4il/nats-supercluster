@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nats1:
+    container_name: nats1
+    entrypoint: '/nats-server -c ./nats/nats1.conf -DV'
+    image: nats
+    volumes: 
+      - ./config:/nats
+  nats2:
+    container_name: nats2
+    entrypoint: '/nats-server -c ./nats/nats2.conf -DV'
+    image: nats
+    volumes: 
+      - ./config:/nats
+  nats3:
+    container_name: nats3
+    entrypoint: '/nats-server -c ./nats/nats3.conf -DV'
+    image: nats
+    volumes: 
+      - ./config:/nats
